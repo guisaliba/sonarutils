@@ -50,7 +50,7 @@ Não há dependências para instalar. As opções `--url` e `--project` estão d
 
 Cada métrica de Coverage e Tests é consultada em uma requisição própria. `branch_coverage` aparece somente no grupo Geral; `new_branch_coverage` é a métrica do código novo. Issues são paginados até o total informado pela API; as quatro seções preservam sobreposições. O filtro do catálogo de code smells é exatamente `resolved=false`, `types=CODE_SMELL` e `inNewCodePeriod=true`; se a versão do servidor não aceitar esse filtro, a consulta será reportada como erro, sem remover filtros nem ampliar silenciosamente o resultado.
 
-Conditions percorre todas as páginas da árvore de componentes, usa a medida de código novo, seleciona até 30 arquivos por padrão e consulta as linhas de cada arquivo selecionado. O padrão 30 corrige a divergência entre o antigo contrato documentado (30) e o fallback implementado anteriormente (10). `--top` e `SONAR_TOP_N` aceitam somente inteiros positivos. A extração de membro é heurística e identifica métodos e propriedades quando detectáveis, sem analisar integralmente a linguagem.
+Conditions percorre todas as páginas da árvore de componentes, usa a medida de código novo, seleciona até 30 arquivos por padrão e consulta as linhas de cada arquivo selecionado. `--top` e `SONAR_TOP_N` aceitam somente inteiros positivos. A extração de membro é heurística e identifica métodos e propriedades quando detectáveis, sem analisar integralmente a linguagem.
 
 ### Relatórios e estados
 
@@ -68,7 +68,7 @@ O scanner usa as APIs REST `/api/measures/component`, `/api/measures/component_t
 
 ### Segurança
 
-Somente requisições `GET` são enviadas. O token opcional usa Basic auth do SonarQube e não é impresso. `.env`, logs, `node_modules` e o conteúdo de `reports/` são ignorados pelo Git; relatórios podem conter dados internos e mensagens de issues e não devem ser versionados. Não há publicação no npm.
+Somente requisições `GET` são enviadas. O token opcional usa Basic auth do SonarQube e não é impresso. `.env`, logs, `node_modules` e o conteúdo de `reports/` são ignorados pelo Git; relatórios podem conter dados internos e mensagens de issues e não devem ser versionados. Não há publicação no npm, em nenhum registry.
 
 ## EN
 
@@ -118,7 +118,7 @@ There are no dependencies to install. `--url` and `--project` are available on e
 
 Every Coverage and Tests metric is queried independently. `branch_coverage` appears only under Overall; `new_branch_coverage` is the new-code metric. Issues are paginated through the API-reported total, and the four sections preserve overlapping results. The code-smell catalog filter is exactly `resolved=false`, `types=CODE_SMELL`, and `inNewCodePeriod=true`; if the server version rejects it, the query is reported as an error rather than weakening the filter or silently broadening its results.
 
-Conditions follows every component-tree page, uses the new-code measure, selects up to 30 files by default, and fetches source lines for each selected file. The default of 30 corrects the mismatch between the old documented contract (30) and its previously implemented fallback (10). `--top` and `SONAR_TOP_N` accept positive integers only. Member detection is heuristic and identifies methods and properties where detectable; it is not a full language parser.
+Conditions follows every component-tree page, uses the new-code measure, selects up to 30 files by default, and fetches source lines for each selected file. `--top` and `SONAR_TOP_N` accept positive integers only. Member detection is heuristic and identifies methods and properties where detectable; it is not a full language parser.
 
 ### Reports and statuses
 
@@ -136,4 +136,4 @@ The extractors use REST APIs `/api/measures/component`, `/api/measures/component
 
 ### Security
 
-Only `GET` requests are sent. The optional token uses SonarQube Basic authentication and is never printed. `.env`, logs, `node_modules`, and `reports/` contents are Git-ignored; reports may contain internal data and issue messages and must not be committed. This project is not published to npm.
+Only `GET` requests are sent. The optional token uses SonarQube Basic authentication and is never printed. `.env`, logs, `node_modules`, and `reports/` contents are Git-ignored; reports may contain internal data and issue messages and must not be committed. This project is not published to npm, in any registry.

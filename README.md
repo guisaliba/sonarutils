@@ -1,8 +1,8 @@
 # sonarutils
 
-[Português](#português) | [English](#english)
+[Português](#PT-BR) | [English](#EN)
 
-## 🇧🇷
+## PT-BR
 
 Utilitários independentes para extração **somente leitura** de métricas, issues e condições não cobertas do SonarQube. Cada comando faz requisições HTTP `GET`; nenhum registro do SonarQube é criado ou alterado.
 
@@ -70,7 +70,7 @@ O scanner usa as APIs REST `/api/measures/component`, `/api/measures/component_t
 
 Somente requisições `GET` são enviadas. O token opcional usa Basic auth do SonarQube e não é impresso. `.env`, logs, `node_modules` e o conteúdo de `reports/` são ignorados pelo Git; relatórios podem conter dados internos e mensagens de issues e não devem ser versionados. Não há publicação no npm.
 
-## 🇬🇧
+## EN
 
 Standalone utilities for **read-only** extraction of SonarQube metrics, issues, and uncovered conditions. Every SonarQube request uses HTTP `GET`; no SonarQube record is created or changed.
 

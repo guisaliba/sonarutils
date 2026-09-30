@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+PLAN.md
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
+reports/**
+!reports/
+!reports/.gitkeep

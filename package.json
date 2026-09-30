@@ -1,0 +1,20 @@
+{
+	"name": "sonarutils",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Standalone read-only SonarQube extraction utilities",
+	"license": "MIT",
+	"author": "Guilherme Saliba",
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {
+		"start": "node src/cli.js conditions",
+		"conditions": "node src/cli.js conditions",
+		"coverage": "node src/cli.js coverage",
+		"tests": "node src/cli.js tests",
+		"issues": "node src/cli.js issues",
+		"full-scan": "node src/cli.js full-scan",
+		"test": "node --test"
+	}
+}
